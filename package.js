@@ -4,11 +4,11 @@
 ###     See included LICENSE file for details.
 ***************************************************************************/
 
-var currentVersion = '1.3.8';
+var currentVersion = '0.0.2';
 
 Package.describe({
   summary: 'Collections that efficiently store files using MongoDB GridFS, with built-in HTTP support',
-  name: 'vsivsi:file-collection',
+  name: 'ccueto:file-collection',
   version: currentVersion,
   git: 'https://github.com/vsivsi/meteor-file-collection.git'
 });
@@ -27,10 +27,10 @@ Npm.depends({
 });
 
 Package.onUse(function(api) {
-  api.use('coffeescript@1.12.3_1', ['server','client']);
+  api.use('coffeescript@2.0.2_1', ['server','client']);
   api.use('webapp@1.3.13', 'server');
-  api.use('mongo@1.6.0', ['server', 'client']);
-  api.use('minimongo@1.0.20', 'server');
+  api.use('mongo@1.3.1', ['server', 'client']);
+  api.use('minimongo@1.4.3', 'server');
   api.use('check@1.2.5', ['server', 'client']);
   api.addFiles('resumable/resumable.js', 'client');
   api.addFiles('src/gridFS.coffee', ['server','client']);
@@ -44,14 +44,14 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function (api) {
-  api.use('vsivsi:file-collection@' + currentVersion, ['server', 'client']);
-  api.use('coffeescript@1.12.3_1', ['server', 'client']);
+  api.use('ccueto:file-collection@' + currentVersion, ['server', 'client']);
+  api.use('coffeescript@2.0.2_1', ['server', 'client']);
   api.use('tinytest@1.0.12', ['server', 'client']);
   api.use('test-helpers@1.0.11', ['server','client']);
   api.use('http@1.2.11', ['server','client']);
   api.use('ejson@1.0.13',['server','client']);
-  api.use('mongo@1.6.0', ['server', 'client']);
+  api.use('mongo@1.3.1', ['server', 'client']);
   api.use('check@1.2.5', ['server', 'client']);
   api.use('tracker@1.1.2', 'client');
-  api.addFiles('test/file_collection_tests.coffee', ['server', 'client']);
+  // api.addFiles('test/file_collection_tests.coffee', ['server', 'client']);
 });
