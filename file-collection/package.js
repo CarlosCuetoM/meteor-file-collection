@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ccueto:file-collection',
-  version: '0.0.1',
+  version: '0.0.8',
   // Brief, one-line summary of the package.
   summary: '',
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.6.0.0');
+  api.versionsFrom('1.6');
   api.use('ecmascript');
   api.mainModule('file-collection.js');
 });

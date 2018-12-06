@@ -4,7 +4,7 @@
 ###     See included LICENSE file for details.
 ***************************************************************************/
 
-var currentVersion = '0.0.2';
+var currentVersion = '0.0.11';
 
 Package.describe({
   summary: 'Collections that efficiently store files using MongoDB GridFS, with built-in HTTP support',
@@ -15,7 +15,7 @@ Package.describe({
 
 Npm.depends({
   // latest mongodb driver is 2.2.x, but early revs, currently seems broken
-  mongodb: '3.1.1',
+  mongodb: '2.2.33',
   'gridfs-locking-stream': '1.1.1',
   'gridfs-locks': '1.3.4',
   dicer: '0.2.5',
@@ -27,10 +27,10 @@ Npm.depends({
 });
 
 Package.onUse(function(api) {
-  api.use('coffeescript@2.0.2_1', ['server','client']);
+  api.use('coffeescript@1.0.17', ['server','client']);
   api.use('webapp@1.3.13', 'server');
-  api.use('mongo@1.3.1', ['server', 'client']);
-  api.use('minimongo@1.4.3', 'server');
+  api.use('mongo@1.3.0', ['server', 'client']);
+  api.use('minimongo@1.4.0', 'server');
   api.use('check@1.2.5', ['server', 'client']);
   api.addFiles('resumable/resumable.js', 'client');
   api.addFiles('src/gridFS.coffee', ['server','client']);
@@ -45,12 +45,12 @@ Package.onUse(function(api) {
 
 Package.onTest(function (api) {
   api.use('ccueto:file-collection@' + currentVersion, ['server', 'client']);
-  api.use('coffeescript@2.0.2_1', ['server', 'client']);
+  api.use('coffeescript@1.0.17', ['server', 'client']);
   api.use('tinytest@1.0.12', ['server', 'client']);
   api.use('test-helpers@1.0.11', ['server','client']);
   api.use('http@1.2.11', ['server','client']);
   api.use('ejson@1.0.13',['server','client']);
-  api.use('mongo@1.3.1', ['server', 'client']);
+  api.use('mongo@1.3.0', ['server', 'client']);
   api.use('check@1.2.5', ['server', 'client']);
   api.use('tracker@1.1.2', 'client');
   // api.addFiles('test/file_collection_tests.coffee', ['server', 'client']);
