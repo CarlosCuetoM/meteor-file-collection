@@ -15,7 +15,7 @@ Package.describe({
 
 Npm.depends({
   // latest mongodb driver is 2.2.x, but early revs, currently seems broken
-  mongodb: '2.1.21',
+  mongodb: '3.1.1',
   'gridfs-locking-stream': '1.1.1',
   'gridfs-locks': '1.3.4',
   dicer: '0.2.5',
@@ -29,7 +29,7 @@ Npm.depends({
 Package.onUse(function(api) {
   api.use('coffeescript@1.12.3_1', ['server','client']);
   api.use('webapp@1.3.13', 'server');
-  api.use('mongo@1.1.15', ['server', 'client']);
+  api.use('mongo@1.6.0', ['server', 'client']);
   api.use('minimongo@1.0.20', 'server');
   api.use('check@1.2.5', ['server', 'client']);
   api.addFiles('resumable/resumable.js', 'client');
@@ -50,7 +50,7 @@ Package.onTest(function (api) {
   api.use('test-helpers@1.0.11', ['server','client']);
   api.use('http@1.2.11', ['server','client']);
   api.use('ejson@1.0.13',['server','client']);
-  api.use('mongo@1.1.15', ['server', 'client']);
+  api.use('mongo@1.6.0', ['server', 'client']);
   api.use('check@1.2.5', ['server', 'client']);
   api.use('tracker@1.1.2', 'client');
   api.addFiles('test/file_collection_tests.coffee', ['server', 'client']);
